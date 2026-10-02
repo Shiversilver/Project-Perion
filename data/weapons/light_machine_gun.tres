@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/weapon_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Light Machine Gun"
+kind = 0
+damage_type = 0
+damage = 10.0
+max_range = 520.0
+refire_delay = 0.12
+flux_per_shot = 6.0
+spread_deg = 7.0
+turn_rate_deg = 90.0
+projectile_speed = 850.0
+projectile_color = Color(1, 0.9, 0.6, 1)
+projectile_length = 7.0
+projectile_width = 1.5
+barrel_length = 10.0

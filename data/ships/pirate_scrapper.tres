@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="ShipData" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ship_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/weapon_mount.gd" id="2"]
+[ext_resource type="Resource" path="res://data/weapons/light_machine_gun.tres" id="3"]
+[ext_resource type="Resource" path="res://data/weapons/light_mortar.tres" id="4"]
+
+[sub_resource type="Resource" id="mount_port"]
+script = ExtResource("2")
+offset = Vector2(10, -8)
+facing_deg = 0.0
+arc_deg = 90.0
+weapon = ExtResource("3")
+group = 1
+
+[sub_resource type="Resource" id="mount_starboard"]
+script = ExtResource("2")
+offset = Vector2(10, 8)
+facing_deg = 0.0
+arc_deg = 90.0
+weapon = ExtResource("3")
+group = 1
+
+[sub_resource type="Resource" id="mount_center"]
+script = ExtResource("2")
+offset = Vector2(0, 0)
+facing_deg = 0.0
+arc_deg = 60.0
+weapon = ExtResource("4")
+group = 2
+
+[resource]
+script = ExtResource("1")
+display_name = "Scrapper"
+hull_class = "Pirate Frigate"
+max_hull = 650.0
+max_armor = 60.0
+flux_capacity = 1600.0
+flux_dissipation = 110.0
+shield_arc_deg = 100.0
+shield_efficiency = 1.1
+shield_upkeep = 15.0
+max_speed = 195.0
+acceleration = 260.0
+turn_rate_deg = 120.0
+turn_acceleration_deg = 300.0
+radius = 22.0
+hull_color = Color(0.55, 0.36, 0.24, 1)
+accent_color = Color(1, 0.6, 0.3, 1)
+outline = PackedVector2Array(26, 0, 8, -8, -2, -18, -18, -14, -22, -4, -22, 4, -18, 14, -2, 18, 8, 8)
+engine_points = PackedVector2Array(-22, 0)
+mounts = Array[ExtResource("2")]([SubResource("mount_port"), SubResource("mount_starboard"), SubResource("mount_center")])

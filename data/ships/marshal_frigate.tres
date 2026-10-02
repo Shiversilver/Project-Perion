@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="ShipData" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ship_data.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/weapon_mount.gd" id="2"]
+[ext_resource type="Resource" path="res://data/weapons/light_autocannon.tres" id="3"]
+[ext_resource type="Resource" path="res://data/weapons/pulse_laser.tres" id="4"]
+[ext_resource type="Resource" path="res://data/weapons/lance_missile.tres" id="5"]
+
+[sub_resource type="Resource" id="mount_port"]
+script = ExtResource("2")
+offset = Vector2(4, -14)
+facing_deg = -30.0
+arc_deg = 220.0
+weapon = ExtResource("3")
+group = 1
+
+[sub_resource type="Resource" id="mount_starboard"]
+script = ExtResource("2")
+offset = Vector2(4, 14)
+facing_deg = 30.0
+arc_deg = 220.0
+weapon = ExtResource("3")
+group = 1
+
+[sub_resource type="Resource" id="mount_nose"]
+script = ExtResource("2")
+offset = Vector2(28, 0)
+facing_deg = 0.0
+arc_deg = 10.0
+weapon = ExtResource("4")
+group = 2
+
+[sub_resource type="Resource" id="mount_missile"]
+script = ExtResource("2")
+offset = Vector2(-10, 0)
+facing_deg = 0.0
+arc_deg = 30.0
+weapon = ExtResource("5")
+group = 3
+
+[resource]
+script = ExtResource("1")
+display_name = "PFA Warden"
+hull_class = "Patrol Frigate"
+max_hull = 1600.0
+max_armor = 160.0
+flux_capacity = 3000.0
+flux_dissipation = 200.0
+shield_arc_deg = 180.0
+shield_efficiency = 0.8
+shield_upkeep = 20.0
+max_speed = 165.0
+acceleration = 230.0
+turn_rate_deg = 95.0
+turn_acceleration_deg = 220.0
+radius = 32.0
+hull_color = Color(0.42, 0.5, 0.6, 1)
+accent_color = Color(0.7, 0.9, 1, 1)
+outline = PackedVector2Array(38, 0, 18, -10, 6, -22, -14, -24, -26, -12, -30, -6, -30, 6, -26, 12, -14, 24, 6, 22, 18, 10)
+engine_points = PackedVector2Array(-30, -7, -30, 7)
+mounts = Array[ExtResource("2")]([SubResource("mount_port"), SubResource("mount_starboard"), SubResource("mount_nose"), SubResource("mount_missile")])
